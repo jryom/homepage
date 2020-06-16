@@ -1,15 +1,15 @@
-const gulp = require('gulp');
-const purgecss = require('gulp-purgecss');
-const rename = require('gulp-rename');
+const gulp = require("gulp");
+const purgecss = require("gulp-purgecss");
+const rename = require("gulp-rename");
 
-gulp.task('default', () => {
+gulp.task("default", () => {
   return gulp
-    .src('node_modules/tachyons/css/tachyons.min.css')
-    .pipe(rename('styles.css'))
+    .src("node_modules/tachyons/css/tachyons.min.css")
+    .pipe(rename("styles.css"))
     .pipe(
       purgecss({
-        content: ['index.html'],
+        content: ["index.html"],
       })
     )
-    .pipe(gulp.dest('.'));
+    .pipe(gulp.dest("."));
 });

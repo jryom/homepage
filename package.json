@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.html",
   "scripts": {
-    "build": "gulp -- styles",
+    "build": "gulp -- build",
     "watch": "gulp -- watch"
   },
   "repository": {
@@ -19,9 +19,10 @@
   "homepage": "https://github.com/jevver/homepage_2020#readme",
   "devDependencies": {
     "gulp": "4.0.2",
-    "gulp-purgecss": "2.1.0",
-    "prettier": "2.0.5",
-    "tachyons": "4.10.0"
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-purgecss": "4.0.2",
+    "prettier": "^2.2.1",
+    "tachyons": "4.12.0"
   },
   "husky": {
     "hooks": {

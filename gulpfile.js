@@ -1,15 +1,24 @@
-const gulp = require("gulp");
+const { watch, series, src, pipe, parallel, dest } = require("gulp");
+const htmlmin = require("gulp-htmlmin");
 const purgecss = require("gulp-purgecss");
 
-gulp.task("watch", () => gulp.watch("**/index.html", gulp.series("styles")));
-
-gulp.task("styles", () =>
-  gulp
-    .src("node_modules/tachyons/css/tachyons.min.css")
+const styles = (cb) => {
+  src("node_modules/tachyons/css/tachyons.min.css")
     .pipe(
       purgecss({
         content: ["index.html"],
       })
     )
-    .pipe(gulp.dest("."))
-);
+    .pipe(dest("./dist"));
+  cb();
+};
+
+const html = (cb) => {
+  src("index.html")
+    .pipe(htmlmin({ collapseWhitespace: true }))
+    .pipe(dest("./dist"));
+  cb();
+};
+
+exports.build = parallel(styles, html);
+exports.watch = () => watch("*", parallel(styles, html));

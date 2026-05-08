@@ -1,0 +1,70 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #f0ede8;
+  color: #1a1a1a;
+  font-family: "Space Grotesk", sans-serif;
+  overflow: hidden;
+  height: 100dvh;
+}
+
+#bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+}
+
+.overlay {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;
+  padding: 2rem;
+  pointer-events: none;
+  justify-content: space-between;
+}
+
+h1 {
+  font-family: "JetBrains Mono", monospace;
+  font-size: clamp(2.5rem, 8vw, 6rem);
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  line-height: 0.9;
+  color: #1a1a1a;
+  text-transform: uppercase;
+  background: #f0ede8;
+  padding: 0.2em 0.3em;
+  margin: -0.2em -0.3em;
+  width: fit-content;
+}
+
+nav {
+  display: flex;
+  gap: 2rem;
+  pointer-events: auto;
+  align-self: flex-end;
+  background: #f0ede8;
+  padding: 0.4em 0.6em;
+  margin: -0.4em -0.6em;
+}
+
+nav a {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: #1a1a1a;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+nav a:hover {
+  border-bottom-color: #1a1a1a;
+}
